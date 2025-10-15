@@ -1,11 +1,9 @@
-package com.example.hibernate;
+package com.example.hibernate.controller;
 
 import com.example.hibernate.dto.CustomerDTO;
 import com.example.hibernate.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
