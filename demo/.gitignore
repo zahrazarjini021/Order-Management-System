@@ -31,3 +31,17 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+######################
+# Mac OSX
+######################
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
