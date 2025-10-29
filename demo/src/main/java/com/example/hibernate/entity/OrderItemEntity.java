@@ -3,6 +3,7 @@ package com.example.hibernate.entity;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Table(name = "ORDER_ITEM")
@@ -21,6 +22,17 @@ public class OrderItemEntity {
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private OrderEntity order;
+
+    @Column(name = "price_at_order_time", nullable = false)
+    private BigDecimal priceAtOrderTime;
+
+    public BigDecimal getPriceAtOrderTime() {
+        return priceAtOrderTime;
+    }
+
+    public void setPriceAtOrderTime(BigDecimal priceAtOrderTime) {
+        this.priceAtOrderTime = priceAtOrderTime;
+    }
 
     public Integer getId() {
         return id;

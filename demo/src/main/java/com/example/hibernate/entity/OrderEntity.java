@@ -2,6 +2,7 @@ package com.example.hibernate.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -13,12 +14,11 @@ public class OrderEntity {
     @Column(name = "order_id", updatable = false, nullable = false)
     private Integer orderId;
 
-    @Column(name = "UUID", nullable = false, unique = true, updatable = false)
-    private String uuid;
+    private Integer productNumer;
 
-    public OrderEntity(String uuid) {
-        this.uuid = uuid;
-    }
+    private Date orderDate;
+
+    private String productPrice;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -31,6 +31,30 @@ public class OrderEntity {
 
     }
 
+    public Integer getProductNumer() {
+        return productNumer;
+    }
+
+    public void setProductNumer(Integer productNumer) {
+        this.productNumer = productNumer;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(String productPrice) {
+        this.productPrice = productPrice;
+    }
+
     public Integer getOrderId() {
         return orderId;
     }
@@ -39,13 +63,6 @@ public class OrderEntity {
         this.orderId = orderId;
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
 
     public CustomerEntity getCustomer() {
         return customer;
